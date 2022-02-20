@@ -12,8 +12,7 @@ public class PersonalData {
     private String phoneNumber;
     private String Address;
 
-    public PersonalData(int personalDataId, String email, String phoneNumber, String address) {
-        this.personalDataId = personalDataId;
+    public PersonalData( String email, String phoneNumber, String address) {
         this.email = email;
         this.phoneNumber = phoneNumber;
         Address = address;

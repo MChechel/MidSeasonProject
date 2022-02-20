@@ -5,6 +5,8 @@ import javax.persistence.*;
 import java.text.DateFormat;
 import java.text.SimpleDateFormat;
 import java.util.Date;
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
 
 @Entity
 public class Bartender {
@@ -18,10 +20,13 @@ public class Bartender {
     public Bartender(String name) {
         DateFormat formatter = new SimpleDateFormat("dd-MM-yyyy");
         Date date = new Date();
-        this.name = name;
+        Pattern pattern = Pattern.compile("[a-zA-Z]{3,26}");
+        Matcher matcher = pattern.matcher(name);
+        if(matcher.matches()){
+            this.name = name;
+        }
         this.dateOfRegister = formatter.format((date));
     }
-
 
     public String getDateOfRegister() {
         return dateOfRegister;
