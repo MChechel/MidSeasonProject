@@ -2,6 +2,9 @@ package model;
 
 
 import javax.persistence.*;
+import java.text.DateFormat;
+import java.text.SimpleDateFormat;
+import java.util.Date;
 
 @Entity
 public class Bartender {
@@ -10,18 +13,33 @@ public class Bartender {
     @Column(name = "bartender_id")
     private int bartenderId;
     private String name;
+    private String dateOfRegister;
+
+    public Bartender(String name) {
+        DateFormat formatter = new SimpleDateFormat("dd-MM-yyyy");
+        Date date = new Date();
+        this.name = name;
+        this.dateOfRegister = formatter.format((date));
+    }
+
+
+    public String getDateOfRegister() {
+        return dateOfRegister;
+    }
+
+    public void setDateOfRegister() {
+        SimpleDateFormat formatter = new SimpleDateFormat("dd-MM-yyyy");
+        Date date = new Date();
+         this.dateOfRegister = formatter.format((date));
+    }
 
     @Override
     public String toString() {
         return "Bartender{" +
                 "bartenderId=" + bartenderId +
                 ", name='" + name + '\'' +
+                ", dateOfRegister='" + dateOfRegister + '\'' +
                 '}';
-    }
-
-    public Bartender(int bartenderId, String name) {
-        this.bartenderId = bartenderId;
-        this.name = name;
     }
 
     public Bartender() {
