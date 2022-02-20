@@ -12,6 +12,9 @@ public class Menu {
     private int menuId;
     private float price;
 
+    @ManyToOne
+    @JoinColumn(name = "Cocktail_name",referencedColumnName="name")
+    private Cocktail cocktail;
 
 
     public Menu(int menuId, float price) {

@@ -1,8 +1,6 @@
 import model.*;
 import persistence.RepositoryBarInventory;
 
-import javax.persistence.criteria.CriteriaBuilder;
-
 public class Main {
     public static void main(String[] args) {
         System.out.println("Let's run the program!");
@@ -12,8 +10,9 @@ public class Main {
         Customer cust = new Customer();
         Ingredient ing = new Ingredient();
         Menu menu = new Menu();
-        Order order = new Order();
+        Orders orders = new Orders();
         PersonalData pd = new PersonalData();
+        CustomerPreferences cp = new CustomerPreferences();
         RepositoryBarInventory rbi = new RepositoryBarInventory();
 
         System.out.println("Let's run the program!");

@@ -3,12 +3,19 @@ package model;
 import javax.persistence.*;
 
 @Entity
-public class Order {
+public class Orders {
+
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY) //auto-increment
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "order_id")
     private int orderId;
+
+    @ManyToOne
+    @JoinColumn(name = "menu_id")
+    private Menu menu;
+
     private int amount;
+
 
     @Override
     public String toString() {
@@ -18,10 +25,10 @@ public class Order {
                 '}';
     }
 
-    public Order() {
+    public Orders() {
     }
 
-    public Order(int orderId, int amount) {
+    public Orders(int orderId, int amount) {
         this.orderId = orderId;
         this.amount = amount;
     }
