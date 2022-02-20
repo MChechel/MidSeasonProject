@@ -1,6 +1,13 @@
 package model;
 
+import javax.persistence.*;
+
+@Entity
 public class Cocktail {
+
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY) //auto-increment
+    @Column(name = "cocktail_id")
     private int cocktailId;
     private String name;
     private String description;

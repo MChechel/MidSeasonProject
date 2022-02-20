@@ -1,6 +1,13 @@
 package model;
 
+import javax.persistence.*;
+
+@Entity
+@Table(name="Bar_Inventory")
 public class BarInventory {
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY) //auto-increment
+    @Column(name = "inventory_id")
     private int inventoryId;
     private int bottleCount;
     private float amountLitters;

@@ -1,6 +1,12 @@
 package model;
 
+import javax.persistence.*;
+
+@Entity
 public class Order {
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY) //auto-increment
+    @Column(name = "order_id")
     private int orderId;
     private int amount;
 

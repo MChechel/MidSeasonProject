@@ -1,6 +1,12 @@
 package model;
 
+import javax.persistence.*;
+
+@Entity
 public class PersonalData {
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY) //auto-increment
+    @Column(name = "personal_data_id")
     private int personalDataId;
     private String email;
     private String phoneNumber;

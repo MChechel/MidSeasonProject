@@ -1,6 +1,12 @@
 package model;
 
+import javax.persistence.*;
+
+@Entity
 public class Ingredient {
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY) //auto-increment
+    @Column(name = "ingredient_id")
     private int ingredientId;
     private String name;
     private float price;

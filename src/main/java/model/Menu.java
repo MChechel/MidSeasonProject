@@ -1,9 +1,18 @@
 package model;
 
 // it is bar menu, not program application
+
+import javax.persistence.*;
+
+@Entity
 public class Menu {
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY) //auto-increment
+    @Column(name = "menu_id")
     private int menuId;
     private float price;
+
+
 
     public Menu(int menuId, float price) {
         this.menuId = menuId;
