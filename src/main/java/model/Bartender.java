@@ -17,6 +17,16 @@ public class Bartender {
     private String name;
     private String dateOfRegister;
 
+    public String getDateOfRegister() {
+        return dateOfRegister;
+    }
+
+    public void setDateOfRegister() {
+        SimpleDateFormat formatter = new SimpleDateFormat("dd-MM-yyyy");
+        Date date = new Date();
+         this.dateOfRegister = formatter.format((date));
+    }
+
     public Bartender(String name) {
         DateFormat formatter = new SimpleDateFormat("dd-MM-yyyy");
         Date date = new Date();
@@ -26,16 +36,6 @@ public class Bartender {
             this.name = name;
         }
         this.dateOfRegister = formatter.format((date));
-    }
-
-    public String getDateOfRegister() {
-        return dateOfRegister;
-    }
-
-    public void setDateOfRegister() {
-        SimpleDateFormat formatter = new SimpleDateFormat("dd-MM-yyyy");
-        Date date = new Date();
-         this.dateOfRegister = formatter.format((date));
     }
 
     @Override

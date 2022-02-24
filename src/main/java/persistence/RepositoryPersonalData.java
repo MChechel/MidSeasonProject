@@ -22,4 +22,25 @@ public class RepositoryPersonalData {
             this.entityManager.getTransaction().rollback();
         }
     }
+
+    public void updatePersonalData(int id, PersonalData personalData){
+        String sql = "UPDATE PersonalData Set Address=:address, email=:email, phoneNumber=:pNum where personal_data_id = :id";
+        this.entityManager.getTransaction().begin();
+        int result = this.entityManager.createQuery(sql)
+                .setParameter("id",id)
+                .setParameter("address",personalData.getAddress())
+                .setParameter("email", personalData.getEmail())
+                .setParameter("pNum",personalData.getPhoneNumber())
+                .executeUpdate();
+        this.entityManager.getTransaction().commit();
+    }
+
+    public void deletePersonalData(int id){
+        String sql = "delete from PersonalData where personal_data_id = :id";
+        this.entityManager.getTransaction().begin();
+        int result = this.entityManager.createQuery(sql)
+                .setParameter("id",id)
+                .executeUpdate();
+        this.entityManager.getTransaction().commit();
+    }
 }

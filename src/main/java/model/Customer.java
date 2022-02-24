@@ -1,6 +1,8 @@
 package model;
 
 import javax.persistence.*;
+import java.text.SimpleDateFormat;
+import java.util.Date;
 
 @Entity
 public class Customer {
@@ -9,13 +11,30 @@ public class Customer {
     @Column(name = "customer_id")
     private int customerId;
     private String name;
+    private String dateOfRegister;
 
+    public String getDateOfRegister() {
+        return dateOfRegister;
+    }
+
+    public void setDateOfRegister() {
+        SimpleDateFormat formatter = new SimpleDateFormat("dd-MM-yyyy");
+        Date date = new Date();
+        this.dateOfRegister = formatter.format((date));
+    }
     @Override
     public String toString() {
         return "Customer{" +
                 "customerId=" + customerId +
                 ", name='" + name + '\'' +
                 '}';
+    }
+
+    public Customer(String name) {
+        this.name = name;
+        SimpleDateFormat formatter = new SimpleDateFormat("dd-MM-yyyy");
+        Date date = new Date();
+        this.dateOfRegister = formatter.format((date));
     }
 
     public Customer() {
@@ -34,11 +53,6 @@ public class Customer {
     }
 
     public void setName(String name) {
-        this.name = name;
-    }
-
-    public Customer(int customerId, String name) {
-        this.customerId = customerId;
         this.name = name;
     }
 }

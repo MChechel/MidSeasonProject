@@ -23,8 +23,7 @@ public class Ingredient {
     public Ingredient() {
     }
 
-    public Ingredient(int ingredientId, String name, float price) {
-        this.ingredientId = ingredientId;
+    public Ingredient( String name, float price) {
         this.name = name;
         this.price = price;
     }
