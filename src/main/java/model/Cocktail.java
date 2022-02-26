@@ -58,8 +58,7 @@ public class Cocktail {
         this.additionalInfo = additionalInfo;
     }
 
-    public Cocktail(int cocktailId, String name, String description, String additionalInfo) {
-        this.cocktailId = cocktailId;
+    public Cocktail(String name, String description, String additionalInfo) {
         this.name = name;
         this.description = description;
         this.additionalInfo = additionalInfo;

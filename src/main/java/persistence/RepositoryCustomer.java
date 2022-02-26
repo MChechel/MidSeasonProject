@@ -1,9 +1,14 @@
 package persistence;
 
+import model.Bartender;
 import model.Customer;
+import model.ReportOnOrders;
 import util.DbUtil;
 
 import javax.persistence.EntityManager;
+import javax.persistence.NoResultException;
+import javax.persistence.criteria.CriteriaBuilder;
+import java.util.List;
 
 public class RepositoryCustomer {
 
@@ -39,7 +44,34 @@ public class RepositoryCustomer {
         this.entityManager.getTransaction().commit();
     }
 
+    public Customer checkIfTableContains(int id){
+        String mySQL = "FROM Ingredient where name = :name";
+        try{
+            return this.entityManager.find(Customer.class, id);
+        } catch(NoResultException e) {
+            return null;
+        }
+    }
 
+    public List<Customer> getListOfAllCustomers(){
+        String mySQL = "SELECT new model.Customer(C.customerId, C.name, C.dateOfRegister) " +
+                "FROM Customer as C";
+        return entityManager.createQuery(mySQL,Customer.class)
+                .getResultList();
+    }
 
+    public Long getAmountOfCustomersByDate(){
+        String mySQL = "SELECT count(C.customerId) " +
+                "FROM Customer as C";
+        return entityManager.createQuery(mySQL, Long.class)
+                .getSingleResult();
+    }
+    public String getAmountOfCustomersByDate1(){
+        String mySQL = "SELECT CONCAT( count(C.customerId),' - amount of customers registered on  ',C.dateOfRegister )" +
+                "FROM Customer as C " +
+                "GROUP BY C.dateOfRegister";
+        return entityManager.createQuery(mySQL, String.class)
+                .getSingleResult();
+    }
 
 }

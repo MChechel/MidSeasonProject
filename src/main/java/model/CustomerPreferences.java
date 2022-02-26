@@ -13,15 +13,6 @@ public class CustomerPreferences {
     @JoinColumn(name = "customer_id")
     private Customer customer;
 
-//    @Id
-//    private Long id;
-//
-//    private byte[] file;
-//
-//    @OneToOne
-//    @JoinColumn(name = "id")
-//    @MapsId
-
     @OneToOne
     @JoinColumn(name = "Cocktail_name",referencedColumnName="name")
     private Cocktail cocktail;

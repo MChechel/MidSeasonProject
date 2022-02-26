@@ -28,8 +28,12 @@ public class Orders {
     public Orders() {
     }
 
-    public Orders(int orderId, int amount) {
+    public Orders(int orderId) {
         this.orderId = orderId;
+    }
+
+    public Orders(Menu menu, int amount) {
+        this.menu = menu;
         this.amount = amount;
     }
 

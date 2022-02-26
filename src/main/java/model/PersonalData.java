@@ -18,6 +18,10 @@ public class PersonalData {
         Address = address;
     }
 
+    public PersonalData(int personalDataId) {
+        this.personalDataId = personalDataId;
+    }
+
     @Override
     public String toString() {
         return "PersonalData{" +

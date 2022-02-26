@@ -20,13 +20,11 @@ public class Bartender {
     public String getDateOfRegister() {
         return dateOfRegister;
     }
-
     public void setDateOfRegister() {
         SimpleDateFormat formatter = new SimpleDateFormat("dd-MM-yyyy");
         Date date = new Date();
          this.dateOfRegister = formatter.format((date));
     }
-
     public Bartender(String name) {
         DateFormat formatter = new SimpleDateFormat("dd-MM-yyyy");
         Date date = new Date();
@@ -37,7 +35,6 @@ public class Bartender {
         }
         this.dateOfRegister = formatter.format((date));
     }
-
     @Override
     public String toString() {
         return "Bartender{" +
@@ -46,18 +43,19 @@ public class Bartender {
                 ", dateOfRegister='" + dateOfRegister + '\'' +
                 '}';
     }
-
     public Bartender() {
+    }
+
+    public Bartender(int bartenderId) {
+        this.bartenderId = bartenderId;
     }
 
     public int getBartenderId() {
         return bartenderId;
     }
-
     public void setBartenderId(int bartenderId) {
         this.bartenderId = bartenderId;
     }
-
     public String getName() {
         return name;
     }
@@ -65,4 +63,6 @@ public class Bartender {
     public void setName(String name) {
         this.name = name;
     }
+
+
 }

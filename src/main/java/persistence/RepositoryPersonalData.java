@@ -1,9 +1,11 @@
 package persistence;
 
+import model.Bartender;
 import model.PersonalData;
 import util.DbUtil;
 
 import javax.persistence.EntityManager;
+import javax.persistence.NoResultException;
 
 public class RepositoryPersonalData {
 
@@ -43,4 +45,13 @@ public class RepositoryPersonalData {
                 .executeUpdate();
         this.entityManager.getTransaction().commit();
     }
+
+    public PersonalData checkIfTableContains(int id){
+        try{
+            return this.entityManager.find(PersonalData.class, id);
+        } catch(NoResultException e) {
+            return null;
+        }
+    }
+
 }

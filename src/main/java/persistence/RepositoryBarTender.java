@@ -1,9 +1,11 @@
 package persistence;
 
 import model.Bartender;
+import model.Ingredient;
 import util.DbUtil;
 
 import javax.persistence.EntityManager;
+import javax.persistence.NoResultException;
 
 public class RepositoryBarTender {
 
@@ -12,6 +14,8 @@ public class RepositoryBarTender {
     public RepositoryBarTender(){
         this.entityManager = DbUtil.getEntityManager();
     }
+
+
     public void saveBartender(Bartender barT){
         try {
             this.entityManager.getTransaction().begin();
@@ -21,6 +25,10 @@ public class RepositoryBarTender {
             this.entityManager.getTransaction().rollback();
         }
     }
+
+
+
+
     public void updateBartender(int id, String newName){
         String sql = "UPDATE Bartender Set name=:newName where bartender_id = :id";
         this.entityManager.getTransaction().begin();
@@ -37,6 +45,14 @@ public class RepositoryBarTender {
                 .setParameter("id",id)
                 .executeUpdate();
         this.entityManager.getTransaction().commit();
+    }
+
+    public Bartender checkIfTableContains(int id){
+        try{
+            return this.entityManager.find(Bartender.class, id);
+        } catch(NoResultException e) {
+            return null;
+        }
     }
 
 

@@ -17,9 +17,13 @@ public class Menu {
     private Cocktail cocktail;
 
 
-    public Menu(int menuId, float price) {
-        this.menuId = menuId;
+    public Menu(float price, Cocktail cocktail) {
         this.price = price;
+        this.cocktail = cocktail;
+    }
+
+    public Menu(int menuId) {
+        this.menuId = menuId;
     }
 
     @Override
