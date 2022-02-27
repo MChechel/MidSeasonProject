@@ -5,7 +5,6 @@ public class ReportOnOrders {
     private String CustomerName;
     private String CocktailName;
     private float price;
-
     @Override
     public String toString() {
         return "ReportOnOrders{" +

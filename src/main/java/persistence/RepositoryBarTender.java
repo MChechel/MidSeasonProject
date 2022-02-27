@@ -26,9 +26,6 @@ public class RepositoryBarTender {
         }
     }
 
-
-
-
     public void updateBartender(int id, String newName){
         String sql = "UPDATE Bartender Set name=:newName where bartender_id = :id";
         this.entityManager.getTransaction().begin();

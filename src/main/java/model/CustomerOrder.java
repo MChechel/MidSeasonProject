@@ -13,9 +13,6 @@ public class CustomerOrder {
     private int id;
 
     @ManyToOne
-    @JoinColumn(name = "order_id")
-    private Orders orders;
-    @ManyToOne
     @JoinColumn(name = "customer_id")
     private Customer customer;
 
@@ -31,8 +28,11 @@ public class CustomerOrder {
         this.dateOfRegister = formatter.format((date));
     }
 
-    public CustomerOrder(Customer customer,Orders orders) {
-        this.orders = orders;
+    public CustomerOrder(int id) {
+        this.id = id;
+    }
+
+    public CustomerOrder(Customer customer) {
         this.customer = customer;
         SimpleDateFormat formatter = new SimpleDateFormat("dd-MM-yyyy");
         Date date = new Date();
