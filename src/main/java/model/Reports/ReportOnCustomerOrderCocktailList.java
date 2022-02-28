@@ -1,4 +1,4 @@
-package model;
+package model.Reports;
 
 public class ReportOnCustomerOrderCocktailList {
     private String cocktailName;

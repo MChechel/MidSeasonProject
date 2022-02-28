@@ -137,11 +137,87 @@ public class Main {
 
 
 
-        RepositoryOrders repositoryOrders = new RepositoryOrders();
-//        repositoryOrders.getOrderReport().stream().forEach(System.out::println);
-        repositoryOrders.getCocktailsGroupedByCustomerOrder(5).stream().forEach(System.out::println);
-        System.out.println("@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@");
-        System.out.println("@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@");
-        repositoryOrders.getCocktailsGroupedByCustomerOrder(4).stream().forEach(System.out::println);
+//        RepositoryOrders repositoryOrders = new RepositoryOrders();
+////        repositoryOrders.getOrderReport().stream().forEach(System.out::println);
+//        repositoryOrders.getCocktailsGroupedByCustomerOrder(5).stream().forEach(System.out::println);
+//        System.out.println("@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@");
+//        System.out.println("@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@");
+//        repositoryOrders.getCocktailsGroupedByCustomerOrder(4).stream().forEach(System.out::println);
+
+
+//        Ingredient hendrixClassic = new Ingredient("Craffters copper", 999);
+//        Ingredient kingsMill = new Ingredient("Aclohol_Free_ingredient", 888);
+//        Ingredient craftersCopper = new Ingredient("test3", 75);
+//
+//        RepositoryIngredient repositoryIngredient = new RepositoryIngredient();
+//        repositoryIngredient.updateIngredient(hendrixClassic);
+//        repositoryIngredient.updateIngredient(kingsMill);
+//        repositoryIngredient.updateIngredient(craftersCopper);
+
+
+////        checking update method for orders
+//        Orders updateOrder1 = new Orders(new Menu(4),7);
+//        RepositoryOrders repositoryOrders = new RepositoryOrders();
+//        repositoryOrders.updateOrder(1,updateOrder1);
+////         +
+
+//        //checking delete method for orders
+//        RepositoryOrders repositoryOrders = new RepositoryOrders();
+//        repositoryOrders.deleteOrder(3);
+//        //+     but has to add, did not manage to use properly fetch and cascade delete so manually delete child entry from corresponding table...
+
+//////        checking update method for orderDetails
+//        OrderDetails updateOrderDetails = new OrderDetails(new CustomerOrder(5),new Orders(1));
+//        RepositoryOrderDetails repositoryOrderDetails = new RepositoryOrderDetails();
+//        repositoryOrderDetails.updateOrderDetails(1, updateOrderDetails);
+//////         +
+
+//        Cocktail cocktail = new Cocktail("Moscow Mule", "Cheap and Easy!", "not so easy...");
+//        Cocktail cocktail1 = new Cocktail("Long Island", "it usually Alcohol, Sugar Honey Ice Tea!", "not so easy...");
+//        Cocktail cocktail2 = new Cocktail("Margaritta", "For hot weather!", "not so easy...");
+//        Cocktail cocktail3 = new Cocktail("Manhattan", "Old school staff!", "not so easy...");
+//
+//        RepositoryCocktail repositoryCocktail = new RepositoryCocktail();
+//        repositoryCocktail.saveCocktail(cocktail);
+//        repositoryCocktail.saveCocktail(cocktail1);
+//        repositoryCocktail.saveCocktail(cocktail2);
+//        repositoryCocktail.saveCocktail(cocktail3);
+//
+//        Menu menuitem1 = new Menu(9F, cocktail);
+//        Menu menuitem2 = new Menu(13F, cocktail1);
+//        Menu menuitem3 = new Menu(7.5F, cocktail2);
+//        Menu menuitem4 = new Menu(8.25F, cocktail3);
+//
+//        RepositoryMenu repositoryMenu = new RepositoryMenu();
+//        repositoryMenu.saveMenuItem(menuitem1);
+//        repositoryMenu.saveMenuItem(menuitem2);
+//        repositoryMenu.saveMenuItem(menuitem3);
+//        repositoryMenu.saveMenuItem(menuitem4);
+
+
+//// checking delete method for Menu
+//        RepositoryMenu repositoryMenu = new RepositoryMenu();
+//        repositoryMenu.deleteMenuItem(9);
+////+
+
+//        // checing update method for menu
+//        RepositoryMenu repositoryMenu = new RepositoryMenu();
+//        Cocktail cocktail2 = new Cocktail("Moscow Mule", "For hot weather!", "not so easy...");
+//        Menu menuitem2 = new Menu(15F, cocktail2);
+//        repositoryMenu.updateMenuItem(menuitem2);
+//        //+
+
+//        // checking delete method for customer order
+//        RepositoryCustomerOrder repositoryCustomerOrder = new RepositoryCustomerOrder();
+//        repositoryCustomerOrder.deleteCustomerOrder(4);
+//        //+
+
+        // checking update method for customer order
+        RepositoryCustomerOrder repositoryCustomerOrder = new RepositoryCustomerOrder();
+        repositoryCustomerOrder.updateCustomerOrder(5,2);
+        //+
+
+
+
     }
 }

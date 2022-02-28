@@ -1,4 +1,4 @@
-package model;
+package model.TablesWithLogs;
 
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;

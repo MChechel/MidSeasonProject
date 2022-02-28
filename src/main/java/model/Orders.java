@@ -1,5 +1,9 @@
 package model;
 
+import org.hibernate.annotations.OnDelete;
+import org.hibernate.annotations.OnDeleteAction;
+import org.hibernate.annotations.SQLUpdate;
+
 import javax.persistence.*;
 
 @Entity
@@ -13,9 +17,7 @@ public class Orders {
     @ManyToOne
     @JoinColumn(name = "menu_id")
     private Menu menu;
-
     private int amount;
-
 
     @Override
     public String toString() {
@@ -51,5 +53,9 @@ public class Orders {
 
     public void setAmount(int amount) {
         this.amount = amount;
+    }
+
+    public int getMenuId(){
+        return this.menu.getMenuId();
     }
 }

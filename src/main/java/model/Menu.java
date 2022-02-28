@@ -16,6 +16,9 @@ public class Menu {
     @JoinColumn(name = "Cocktail_name",referencedColumnName="name")
     private Cocktail cocktail;
 
+    public Cocktail getCocktail() {
+        return cocktail;
+    }
 
     public Menu(float price, Cocktail cocktail) {
         this.price = price;

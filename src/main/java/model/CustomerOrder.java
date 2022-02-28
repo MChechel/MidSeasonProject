@@ -27,11 +27,15 @@ public class CustomerOrder {
         Date date = new Date();
         this.dateOfRegister = formatter.format((date));
     }
-
+    public int getId() {
+        return id;
+    }
+    public Customer getCustomer() {
+        return customer;
+    }
     public CustomerOrder(int id) {
         this.id = id;
     }
-
     public CustomerOrder(Customer customer) {
         this.customer = customer;
         SimpleDateFormat formatter = new SimpleDateFormat("dd-MM-yyyy");

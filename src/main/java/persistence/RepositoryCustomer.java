@@ -1,13 +1,10 @@
 package persistence;
 
-import model.Bartender;
 import model.Customer;
-import model.ReportOnOrders;
 import util.DbUtil;
 
 import javax.persistence.EntityManager;
 import javax.persistence.NoResultException;
-import javax.persistence.criteria.CriteriaBuilder;
 import java.util.List;
 
 public class RepositoryCustomer {
